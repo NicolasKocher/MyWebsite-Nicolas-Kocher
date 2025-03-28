@@ -317,6 +317,23 @@
           }
         }
       }
+
+      .experience-content {
+        .experience-description {
+          font-size: 0.9rem;
+          line-height: 1.4;
+          margin-bottom: 1rem;
+        }
+
+        .skills-used {
+          margin-bottom: 1rem;
+
+          .skill-tag {
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
   }
 }
