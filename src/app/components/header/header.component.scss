@@ -28,7 +28,14 @@ header {
     }
   }
 
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+
   nav {
+    margin-right: 1.5rem;
+
     ul {
       display: flex;
       list-style: none;
@@ -58,29 +65,33 @@ header {
           }
         }
       }
+    }
+  }
 
-      .theme-toggle {
-        button {
-          background: none;
-          border: none;
-          cursor: pointer;
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          color: var(--text-color);
-          font-size: 1.2rem;
-          transition: var(--transition);
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-          &:hover {
-            background: var(--gradient-primary);
-            color: white;
-            transform: translateY(-3px);
-          }
-        }
-      }
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--gradient-primary);
+      color: white;
+      transform: translateY(-3px);
     }
   }
 
@@ -146,14 +157,23 @@ header {
 // Responsive styles
 @media screen and (max-width: 768px) {
   header {
-    .mobile-toggle {
-      display: block;
+    .header-content {
+      position: relative;
     }
 
-    .theme-toggle-mobile {
+    .nav-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .mobile-toggle {
+      display: block;
     }
 
     nav {
@@ -166,6 +186,7 @@ header {
       box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
       transition: var(--transition);
       padding: 6rem 2rem 2rem;
+      margin-right: 0;
 
       &.open {
         right: 0;
@@ -179,10 +200,6 @@ header {
         li a {
           font-size: 1.2rem;
         }
-      }
-
-      .theme-toggle {
-        display: none;
       }
     }
 

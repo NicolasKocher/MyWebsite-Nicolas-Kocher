@@ -76,7 +76,6 @@ a:hover {
 
 .section {
   padding: 6rem 0;
-  background-color: var(--section-background);
   transition: background-color 0.3s ease;
 }
 
@@ -182,4 +181,13 @@ a:hover {
   .btn {
     padding: 0.7rem 1.5rem;
   }
+}
+
+/* Abwechselnde Abschnitte mit leicht unterschiedlichen Hintergründen */
+.section:nth-child(even) {
+  background-color: var(--section-background);
+}
+
+.section:nth-child(odd) {
+  background-color: var(--card-background);
 }

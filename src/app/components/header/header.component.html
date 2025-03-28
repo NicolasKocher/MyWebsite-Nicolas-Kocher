@@ -5,52 +5,51 @@
         <span class="text-gradient">Nicolas Kocher</span>
       </a>
 
-      <nav [ngClass]="{ open: isMobileMenuOpen }">
-        <ul>
-          <li><a href="#home" (click)="isMobileMenuOpen = false">Home</a></li>
-          <li>
-            <a href="#about" (click)="isMobileMenuOpen = false">Über mich</a>
-          </li>
-          <li>
-            <a href="#skills" (click)="isMobileMenuOpen = false">Skills</a>
-          </li>
-          <li>
-            <a href="#projects" (click)="isMobileMenuOpen = false">Erfahrung</a>
-          </li>
-          <li>
-            <a href="#contact" (click)="isMobileMenuOpen = false">Kontakt</a>
-          </li>
-          <li class="theme-toggle">
-            <button (click)="toggleTheme()" aria-label="Farbschema wechseln">
-              <i
-                class="fas"
-                [ngClass]="{ 'fa-moon': !isDarkMode, 'fa-sun': isDarkMode }"
-              ></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <div class="nav-container">
+        <nav [ngClass]="{ open: isMobileMenuOpen }">
+          <ul>
+            <li><a href="#home" (click)="isMobileMenuOpen = false">Home</a></li>
+            <li>
+              <a href="#about" (click)="isMobileMenuOpen = false">Über mich</a>
+            </li>
+            <li>
+              <a href="#skills" (click)="isMobileMenuOpen = false">Skills</a>
+            </li>
+            <li>
+              <a href="#projects" (click)="isMobileMenuOpen = false"
+                >Erfahrung</a
+              >
+            </li>
+            <li>
+              <a href="#contact" (click)="isMobileMenuOpen = false">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
 
-      <button
-        class="mobile-toggle"
-        (click)="toggleMobileMenu()"
-        aria-label="Menü öffnen/schließen"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            (click)="toggleTheme()"
+            aria-label="Farbschema wechseln"
+          >
+            <i
+              class="fas"
+              [ngClass]="{ 'fa-moon': !isDarkMode, 'fa-sun': isDarkMode }"
+            ></i>
+          </button>
 
-      <button
-        class="theme-toggle-mobile"
-        (click)="toggleTheme()"
-        aria-label="Farbschema wechseln"
-      >
-        <i
-          class="fas"
-          [ngClass]="{ 'fa-moon': !isDarkMode, 'fa-sun': isDarkMode }"
-        ></i>
-      </button>
+          <button
+            class="mobile-toggle"
+            [ngClass]="{ active: isMobileMenuOpen }"
+            (click)="toggleMobileMenu()"
+            aria-label="Menü öffnen/schließen"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </header>

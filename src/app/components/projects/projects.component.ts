@@ -24,7 +24,7 @@ export class ProjectsComponent implements OnInit {
   experiences: Experience[] = [
     {
       company: 'insert effect GmbH',
-      position: 'Software Developer',
+      position: 'Software Entwickler',
       period: 'März 2025 - Heute',
       description:
         'Im Lab arbeite ich gleichzeitig an verschiedenen innovativen Projekten und setze neue Ideen praktisch um. Dabei experimentiere ich gezielt mit aktuellen Technologien, entwickle Prototypen und unterstütze das Team aktiv bei der Realisierung technischer Lösungen. Im Vordergrund stehen dabei das Kennenlernen neuer Ansätze, die flexible Reaktion auf wechselnde Anforderungen und der Aufbau wertvoller Praxiserfahrung.',
