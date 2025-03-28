@@ -1,27 +1,33 @@
 <header [ngClass]="{ scrolled: isScrolled }">
   <div class="container">
     <div class="header-content">
-      <a href="#" class="logo">
+      <a (click)="scrollTo('home')" class="logo">
         <span class="text-gradient">Nicolas Kocher</span>
       </a>
 
       <div class="nav-container">
         <nav [ngClass]="{ open: isMobileMenuOpen }">
           <ul>
-            <li><a href="#home" (click)="isMobileMenuOpen = false">Home</a></li>
             <li>
-              <a href="#about" (click)="isMobileMenuOpen = false">Über mich</a>
+              <a (click)="scrollTo('home')" style="cursor: pointer">Home</a>
             </li>
             <li>
-              <a href="#skills" (click)="isMobileMenuOpen = false">Skills</a>
+              <a (click)="scrollTo('about')" style="cursor: pointer"
+                >Über mich</a
+              >
             </li>
             <li>
-              <a href="#projects" (click)="isMobileMenuOpen = false"
+              <a (click)="scrollTo('skills')" style="cursor: pointer">Skills</a>
+            </li>
+            <li>
+              <a (click)="scrollTo('projects')" style="cursor: pointer"
                 >Erfahrung</a
               >
             </li>
             <li>
-              <a href="#contact" (click)="isMobileMenuOpen = false">Kontakt</a>
+              <a (click)="scrollTo('contact')" style="cursor: pointer"
+                >Kontakt</a
+              >
             </li>
           </ul>
         </nav>

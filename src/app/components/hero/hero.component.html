@@ -14,8 +14,15 @@
           Medieninformatik studiere.
         </p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn">Kontakt</a>
-          <a href="#projects" class="btn btn-outline">Meine Erfahrung</a>
+          <a (click)="scrollTo('contact')" class="btn" style="cursor: pointer"
+            >Kontakt</a
+          >
+          <a
+            (click)="scrollTo('projects')"
+            class="btn btn-outline"
+            style="cursor: pointer"
+            >Meine Erfahrung</a
+          >
         </div>
         <div class="social-links">
           <a

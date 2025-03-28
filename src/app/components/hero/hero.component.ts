@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-hero',
@@ -18,7 +19,10 @@ import { gsap } from 'gsap';
 export class HeroComponent implements OnInit, AfterViewInit {
   private isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private scrollService: ScrollService
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -78,5 +82,9 @@ export class HeroComponent implements OnInit, AfterViewInit {
         },
         '-=0.8'
       );
+  }
+
+  scrollTo(elementId: string): void {
+    this.scrollService.scrollToElement(elementId);
   }
 }

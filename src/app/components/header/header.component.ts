@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,10 @@ export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
   isDarkMode = true;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private scrollService: ScrollService
+  ) {}
 
   ngOnInit(): void {
     this.themeService.darkMode$.subscribe((isDark) => {
@@ -33,5 +37,10 @@ export class HeaderComponent implements OnInit {
 
   toggleTheme() {
     this.themeService.toggleTheme();
+  }
+
+  scrollTo(elementId: string) {
+    this.scrollService.scrollToElement(elementId);
+    this.isMobileMenuOpen = false;
   }
 }
