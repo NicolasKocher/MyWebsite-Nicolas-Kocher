@@ -1,0 +1,133 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title">Kontakt</h2>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Lass uns in Kontakt treten</h3>
+        <p>
+          Hast du Fragen oder bist du an einer Zusammenarbeit interessiert?
+          Zögere nicht, mich zu kontaktieren!
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info">
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:nicokocher1999&#64;gmail.com"
+                  >nicokocher1999&#64;gmail.com</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info">
+              <h4>Standort</h4>
+              <p>Deutschland</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="icon">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="info">
+              <h4>LinkedIn</h4>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/nicolaskocher/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Nicolas Kocher</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              [ngClass]="{
+                invalid: isSubmitted && formControls['name'].errors
+              }"
+            />
+            @if (isSubmitted && formControls['name'].errors) {
+            <span class="error-message">Bitte gib deinen Namen ein.</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              [ngClass]="{
+                invalid: isSubmitted && formControls['email'].errors
+              }"
+            />
+            @if (isSubmitted && formControls['email'].errors) {
+            <span class="error-message"
+              >Bitte gib eine gültige Email-Adresse ein.</span
+            >
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Betreff</label>
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              [ngClass]="{
+                invalid: isSubmitted && formControls['subject'].errors
+              }"
+            />
+            @if (isSubmitted && formControls['subject'].errors) {
+            <span class="error-message">Bitte gib einen Betreff ein.</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea
+              id="message"
+              rows="5"
+              formControlName="message"
+              [ngClass]="{
+                invalid: isSubmitted && formControls['message'].errors
+              }"
+            ></textarea>
+            @if (isSubmitted && formControls['message'].errors) {
+            <span class="error-message"
+              >Bitte gib eine Nachricht mit mindestens 10 Zeichen ein.</span
+            >
+            }
+          </div>
+
+          <button type="submit" class="btn">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+</section>

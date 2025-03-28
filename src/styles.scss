@@ -1,1 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Globale Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Light Theme Variablen (Standard) */
+:root {
+  --primary-color: #7702ff;
+  --secondary-color: #ff41f8;
+  --accent-color: #f0060b;
+  --text-color: #333;
+  --light-text-color: #666;
+  --background-color: #fff;
+  --card-background: #fff;
+  --section-background: #f9f9f9;
+  --footer-background: #f9f9ff;
+  --border-color: #eee;
+  --input-background: #fff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --gradient-primary: linear-gradient(120deg, #7702ff, #cc26d5, #f0060b);
+  --gradient-secondary: linear-gradient(90deg, #7702ff, #cc26d5);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --container-width: 1200px;
+}
+
+/* Dark Theme Variablen */
+.dark-theme {
+  --text-color: #e4e4e4;
+  --light-text-color: #b0b0b0;
+  --background-color: #121212;
+  --card-background: #1e1e1e;
+  --section-background: #181818;
+  --footer-background: #1a1a1a;
+  --border-color: #333;
+  --input-background: #2a2a2a;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  background-color: var(--section-background);
+  transition: background-color 0.3s ease;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  color: var(--text-color);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  color: white;
+}
+
+.text-gradient {
+  background-image: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.5rem;
+  }
+}

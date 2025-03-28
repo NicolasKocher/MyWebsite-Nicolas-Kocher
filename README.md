@@ -1,59 +1,86 @@
-# MyWebsite
+# Nicolas Kocher - Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Eine moderne, interaktive Portfolio-Website, entwickelt mit Angular und animiert mit GSAP.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- 🎨 Modernes, responsives Design mit ansprechenden Farbverläufen
+- ✨ Animationen beim Scrollen und Interaktionen
+- 📱 Vollständig responsive für alle Geräte
+- 🧩 Modulare Komponenten-Struktur
+- 📝 Kontaktformular mit Validierung
+- 🚀 Optimiert für Performance und SEO
+
+## Technologien
+
+- **Angular** - Frontend-Framework
+- **TypeScript** - Programmiersprache
+- **SCSS** - CSS-Präprozessor
+- **GSAP** - Animation Library
+- **Font Awesome** - Icon Library
+- **Responsive Design** - Für alle Geräte optimiert
+
+## Start des Projekts
+
+1. Klonen Sie das Repository
+
+```bash
+git clone https://github.com/yourusername/nicolas-kocher-portfolio.git
+cd nicolas-kocher-portfolio
+```
+
+2. Installieren Sie die Abhängigkeiten
+
+```bash
+npm install
+```
+
+3. Starten Sie den Entwicklungsserver
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Öffnen Sie die Anwendung im Browser
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Projekt-Struktur
 
-```bash
-ng generate --help
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── header/
+│   │   ├── hero/
+│   │   ├── about/
+│   │   ├── skills/
+│   │   ├── projects/
+│   │   ├── contact/
+│   │   └── footer/
+│   ├── app.component.ts
+│   └── ...
+├── assets/
+│   └── images/
+└── styles.scss
 ```
 
-## Building
+## Deployment
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Für das Deployment der Anwendung können Sie den folgenden Befehl ausführen:
 
 ```bash
-ng test
+ng build --prod
 ```
 
-## Running end-to-end tests
+Die gebaute Anwendung finden Sie dann im Ordner `dist/`.
 
-For end-to-end (e2e) testing, run:
+## Autor
 
-```bash
-ng e2e
-```
+**Nicolas Kocher** - [GitHub](https://github.com/NicolasKocher) - [LinkedIn](https://www.linkedin.com/in/nicolaskocher/)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Lizenz
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe [LICENSE](LICENSE) Datei für Details.

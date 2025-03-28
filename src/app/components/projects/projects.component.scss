@@ -1,0 +1,322 @@
+.projects {
+  background-color: var(--section-background);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    right: -300px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  .project-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+      .project-overlay {
+        opacity: 1;
+      }
+    }
+
+    .project-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+
+        .project-buttons {
+          display: flex;
+          gap: 1rem;
+
+          .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+
+            &.btn-outline {
+              background: transparent;
+              border: 2px solid white;
+              color: white;
+
+              &:hover {
+                background: white;
+                color: var(--primary-color);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .project-info {
+      padding: 1.5rem;
+
+      .project-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+
+      .project-description {
+        font-size: 0.95rem;
+        color: var(--light-text-color);
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+
+        .tag {
+          display: inline-block;
+          padding: 0.3rem 0.8rem;
+          background: var(--input-background);
+          border-radius: 20px;
+          font-size: 0.8rem;
+          color: var(--primary-color);
+          transition: var(--transition);
+
+          &:hover {
+            background: var(--gradient-primary);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .more-projects {
+    text-align: center;
+  }
+
+  .experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+  }
+
+  .experience-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    padding: 2rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-header {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      .company-logo {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-radius);
+        background: white;
+        padding: 0.5rem;
+        box-shadow: var(--shadow);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .company-info {
+        flex: 1;
+
+        .company-name {
+          font-size: 1.4rem;
+          margin-bottom: 0.3rem;
+          color: var(--text-color);
+          font-weight: 600;
+        }
+
+        .position {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: var(--primary-color);
+          font-weight: 500;
+        }
+
+        .period {
+          font-size: 0.9rem;
+          color: var(--light-text-color);
+          margin-bottom: 0.5rem;
+        }
+
+        .job-details {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          color: var(--light-text-color);
+
+          .location,
+          .job-type {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            i {
+              font-size: 0.8rem;
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    .experience-content {
+      .experience-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--light-text-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .skills-used {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+
+        .skill-tag {
+          display: inline-block;
+          padding: 0.3rem 0.8rem;
+          background: var(--gradient-primary);
+          border-radius: 20px;
+          font-size: 0.85rem;
+          color: white;
+          transition: var(--transition);
+        }
+      }
+
+      .company-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-color);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
+
+        i {
+          font-size: 0.8rem;
+        }
+
+        &:hover {
+          color: var(--secondary-color);
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+
+  .resume-download {
+    text-align: center;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      i {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+      padding: 1.5rem;
+
+      .experience-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+
+        .company-logo {
+          margin: 0 auto;
+        }
+
+        .company-info {
+          .job-details {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

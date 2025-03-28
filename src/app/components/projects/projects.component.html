@@ -1,0 +1,60 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <h2 class="section-title">Berufserfahrung</h2>
+
+    <div class="experience-grid">
+      @for (experience of experiences; track experience.company) {
+      <div class="experience-card">
+        <div class="experience-header">
+          <div class="company-logo">
+            <img [src]="experience.logo" [alt]="experience.company + ' Logo'" />
+          </div>
+          <div class="company-info">
+            <h3 class="company-name">{{ experience.company }}</h3>
+            <p class="position">{{ experience.position }}</p>
+            <span class="period">{{ experience.period }}</span>
+            @if (experience.location || experience.type) {
+            <div class="job-details">
+              @if (experience.location) {
+              <span class="location"
+                ><i class="fas fa-map-marker-alt"></i>
+                {{ experience.location }}</span
+              >
+              } @if (experience.type) {
+              <span class="job-type"
+                ><i class="fas fa-briefcase"></i> {{ experience.type }}</span
+              >
+              }
+            </div>
+            }
+          </div>
+        </div>
+        <div class="experience-content">
+          <p class="experience-description">{{ experience.description }}</p>
+          <div class="skills-used">
+            @for (skill of experience.skills; track skill) {
+            <span class="skill-tag">{{ skill }}</span>
+            }
+          </div>
+          @if (experience.link) {
+          <a
+            [href]="experience.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="company-link"
+          >
+            <i class="fas fa-external-link-alt"></i> Firma besuchen
+          </a>
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="resume-download">
+      <a href="#" class="btn"
+        >Lebenslauf herunterladen <i class="fas fa-download"></i
+      ></a>
+    </div>
+  </div>
+</section>

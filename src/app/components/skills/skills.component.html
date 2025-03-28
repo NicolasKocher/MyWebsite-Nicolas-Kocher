@@ -1,0 +1,42 @@
+<section id="skills" class="section skills">
+  <div class="container">
+    <h2 class="section-title">Meine Fähigkeiten</h2>
+
+    <div class="skills-content">
+      <div class="technical-skills">
+        <h3>Technische Fähigkeiten</h3>
+
+        <div class="skills-grid">
+          @for (skill of technicalSkills; track skill.name) {
+          <div class="skill-item slide-up">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h4>{{ skill.name }}</h4>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width.%]="skill.level"></div>
+              </div>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="soft-skills">
+        <h3>Soft Skills</h3>
+
+        <div class="soft-skills-grid">
+          @for (skill of softSkills; track skill) {
+          <div class="soft-skill-item fade-in">
+            <div class="soft-skill-bubble">
+              {{ skill }}
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
