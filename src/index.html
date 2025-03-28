@@ -15,6 +15,16 @@
     />
     <meta name="author" content="Nicolas Kocher" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <script>
+      // Theme sofort beim Laden der Seite setzen, um Flackern zu vermeiden
+      (function () {
+        const savedTheme = localStorage.getItem("theme-mode");
+        const isDarkMode = savedTheme ? savedTheme === "dark" : true; // Standard ist Dark Mode
+        document.documentElement.classList.add(
+          isDarkMode ? "dark-theme" : "light-theme"
+        );
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>

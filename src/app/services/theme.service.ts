@@ -49,10 +49,16 @@ export class ThemeService {
   private updateDocumentClass(isDark: boolean): void {
     if (this.isBrowser) {
       if (isDark) {
-        document.documentElement.classList.add('dark-theme');
+        // Nur hinzufügen/entfernen wenn nötig, um Flackern zu reduzieren
+        if (!document.documentElement.classList.contains('dark-theme')) {
+          document.documentElement.classList.add('dark-theme');
+        }
         document.documentElement.classList.remove('light-theme');
       } else {
-        document.documentElement.classList.add('light-theme');
+        // Nur hinzufügen/entfernen wenn nötig, um Flackern zu reduzieren
+        if (!document.documentElement.classList.contains('light-theme')) {
+          document.documentElement.classList.add('light-theme');
+        }
         document.documentElement.classList.remove('dark-theme');
       }
     }
