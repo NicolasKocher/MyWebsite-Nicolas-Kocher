@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
+    "postbuild": "npm run move-netlify-files",
+    "move-netlify-files": "cp -r netlify/* dist/my-website-nicolas-kocher/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:MyWebsite": "node dist/my-website/server/server.mjs"
@@ -20,6 +22,7 @@
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.5",
+    "@netlify/angular-runtime": "^2.2.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "express": "^4.18.2",
     "gsap": "^3.12.7",

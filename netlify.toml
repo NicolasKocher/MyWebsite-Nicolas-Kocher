@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist/my-website-nicolas-kocher/browser"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run start"
+  targetPort = 4200
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/render"
+  status = 200 
